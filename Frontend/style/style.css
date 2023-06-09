@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+  
+
+:root {
+  --amarelo-ipiranga: #FFD100;
+  --azul-ipiranga: #01336E;
+}
+
+body {
+  background-color: var(--azul-ipiranga);
+  color: var(--amarelo-ipiranga);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.logo {
+  width: 500px;
+  height: 100px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+
+.container-menu {
+  background-color: black;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.retornar-form,
+.cadastros-randomicos {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.retornar-menu img {
+  padding: .5rem;
+  border-radius: 50%;
+  background-color: var(--amarelo-ipiranga);
+}
+
+
+
+.cards-menu  button, .container-cadastros button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--azul-ipiranga);
+  color: #FFFFFF;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  
+}
+
+form { 
+  display: none;
+}
+
+.container-cadastros {
+  display: none;
+  height: 398px;
+}
+
+#cadastros {
+  background-color: black;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cadastros span {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  padding: .5rem 0;
+  cursor: pointer;
+
+}
+
+
+
+#cadastros input {
+  margin-top: 2rem;
+  padding: .5rem;
+}
+
+
+
+.pesquisa-form {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 5px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.titulo-field {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+fieldset {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 450px; 
+  position: relative; /* Added */
+}
+
+.pergunta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .4rem 1rem;
+}
+
+.pergunta label {
+  text-align: left;
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pergunta input,
+.pergunta select {
+  display: flex;
+  width: 80%;
+  margin: 0.5rem 0 0 1rem;
+  padding: 0.4rem 0.4rem;
+  border-radius: 5px;
+}
+
+.pergunta select {
+  border: none;
+}
+
+.generos {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.proximo-btn {
+  padding: 2rem 0.5rem;
+  padding-right: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute; /* Added */
+  bottom: 0; /* Added */
+}
+
+.proximo-btn input {
+  padding: 0.3rem 0.5rem;
+}
+
+.span-index {
+  width: 100%;
+  padding: 0.5rem 0;
+  padding-left: 1rem;
+}
+
+#dados-socioeconomico {
+  display: none;
+}
+
+footer {
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+footer p {
+  margin-right: .5rem;
+}
+
+header, footer {
+  display: flex;
+  background-color: black;
+  padding: .7rem;
+
+}
+
+.equipe {
+  display: flex;
+  justify-content: space-between;
+}
+
+.member {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+
+.equipe img {
+  height: 100px;
+  width: 100px;
+  border-radius: 80%;
+  align-items: center;
+  margin: auto;
+}
+
+
+.modal {
+  display: none;
+  text-align: center;
+}
+
+
+@media (max-width: 420px) {
+  h2 {
+    margin-top: 1rem;
+  }
+  
+  form {
+    width: 340px;
+    padding: 2px;
+  }
+
+  fieldset {
+    padding: 2px;
+    min-height: 520px;
+  }
+
+  .proximo-btn {
+    padding: 2rem 0.5rem;
+  }
+}

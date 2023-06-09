@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Ipiranga</title>
+    <link rel="stylesheet" href="style/style.css">    
+    <script src="script/menu.js" defer></script>
+    <script src="script/script.js" defer></script>
+    <script src="script/api-connection.js" defer></script>
+    
+</head>
+<body>
+
+    <div class="container-menu">
+        <h1>Menu</h1>
+        <div class="cards-menu">
+            <div class="retornar-form">
+                <h2>Formulário</h2>
+                <button class="open-form">Abrir formulário</button>
+            </div>
+            <div class="cadastros-randomicos">
+                <h2>Cadastros</h2>
+                <button class="cadastros-btn">Gerar cadastros</button>
+            </div>
+        </div>
+
+        <h2>Integrantes</h2>
+        <div class="equipe">
+            <div class="member">
+              <img src="imagens/adehilton-carlos.png" alt="foto de perfil Adehilton Carlos">
+              <h3>Adehilton Carlos</h3>
+            </div>
+            
+            <div class="member">
+              <img src="imagens/erickson-melo.png" alt="foto de perfil Erickson Melo">
+              <h3>Erickson Melo</h3>
+            </div>
+            
+            <div class="member">
+              <img src="imagens/jonatas-alves.png" alt="foto de perfil jonatas alves">
+              <h3>Jonatas Alves</h3>
+            </div>
+
+            <div class="member">
+                <img class="integrante" src="imagens/thiago-vasconcelos.png" alt="foto de perfil Thiago Vasconcelos">
+                <h3>Thiago Vasconcelos</h3>
+              </div>
+              
+              <div class="member">
+                <img src="imagens/wander-andrade.png" alt="foto de perfil Wander Andrade ">
+                <h3>Wander Andrade</h3>
+              </div>
+          </div>
+          
+    </div>
+
+    <div class="container-cadastros">
+        <span class="retornar-menu"><img src="imagens/retorna.png" alt=""></span>
+        <h1>Gerando cadastros randomicos</h1>
+        <p>Selecione a quantidade de cadastros</p>
+        <input type="number" placeholder="Ex: 3" class="numero-cadastros">
+        <button class="requisicao-cadastros">Gerar</button>
+    </div>
+
+    <div class="modal">
+        <div class="modal-conteudo">
+          <h2 id="modal-titulo">Gerando Cadastros</h2>
+          <p id="modal-mensagem">Aguarde...</p>
+        </div>
+    </div>
+    
+    <form  action="" id="pesquisa-form">
+        
+        <h2 class="titulo-field">Novo Cadastro</h2>
+        <fieldset id="dados-pessoais">
+            <div class="pergunta">
+                <label for="nome">Nome: </label>
+                <input type="text" placeholder="Ex: João" name="nome" id="nome" required>
+            </div>
+            
+            <div class="pergunta">
+                <label for="sobrenome">Sobrenome: </label>
+                <input type="text" placeholder="Ex: Souza" name="sobrenome" id="sobrenome" required>
+            </div>
+
+            <div class="pergunta">
+                <label for="genero">Gênero:</label>
+                <select name="genero" id="genero-select" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMININO">Feminino</option>
+                </select>
+            </div>
+              
+
+            <div class="pergunta">
+                <label for="idade">Idade:</label>
+                <input type="number" min="18" max="50" placeholder="Ex: 20" name="idade" id="idade" required>
+            </div>
+
+            <div class="proximo-btn">
+                <input type="button" value="Anterior" class="return-btn">
+                <input type="button" value="Próximo" class="next-btn">
+            </div>
+            
+
+        </fieldset>
+
+        <fieldset id="dados-socioeconomico">
+            <div class="pergunta">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+            <div class="pergunta">
+                <label for="faixa_salarial">Faixa salarial:</label>
+                <select name="faixa_salarial" id="faixa-salarial">
+                    <option value="" disabled="disabled" selected="true" hidden>Selecione uma opção</option> 
+                    <option value="ATE_1_SALARIO">Até 1 salário</option>
+                    <option value="ENTRE_1_E_2">Acima de 1, até 2 salários</option>
+                    <option value="ENTRE_2_E_3">Acima de 2, até 3 salários </option>
+                    <option value="ENTRE_3_E_4">Acima de 3, até 4 salários </option>
+                    <option value="ACIMA_DE_4">Acima de 4 salários</option>
+                </select>
+            </div>
+
+            <div class="pergunta">
+                <label for="escolaridade">Nivel de escolaridade:</label>
+                <select name="escolaridade" id="escolaridade">
+                    <option value="" disabled="disabled" selected="true" hidden>Selecione uma opção</option>                  
+                    <option value="SUPERIOR_COMPLETO">Superior completo</option>
+                    <option value="SUPERIOR_INCOMPLETO">Superior incompleto</option>
+                    <option value="MEDIO_COMPLETO">Médio completo</option>
+                    <option value="MEDIO_INCOMPLETO">Médio incompleto</option>
+                    <option value="FUNDAMENTAL_COMPLETO">Fundamental completo</option>
+                    <option value="FUNDAMENTAL_INCOMPLETO">Fundamental incompleto</option>
+                    <option value="ANALFABETO">Analfabeto</option>
+                </select>
+            </div>
+
+
+            <div class="proximo-btn">
+                <input type="button" value="Anterior" class="return-btn">
+                <input type="button" value="Próximo" class="next-btn">
+            </div>
+
+
+        </fieldset>
+
+        <fieldset id="demograficas-socioeconomico">
+
+            <div class="pergunta">
+                <label for="profissao">Qual é a sua profissão?</label>
+                <input type="text" placeholder="Ex: Desenvolvedor" name="profissao" id="profissao" required>
+            </div>
+            <div class="pergunta">
+                <label for="situacao-trabalho">Qual é a sua situação de trabalho atual?</label>
+                <select name="situacao_trabalho" id="situacao-trabalho" required>
+                    <option value="" disabled selected hidden>Selecione uma opção</option>
+                    <option value="EMPREGADO">Empregado</option>
+                    <option value="DESEMPREGADO">Desempregado</option>
+                    <option value="AUTONOMO">Autônomo</option>
+                </select>
+            </div>
+            <div class="pergunta">
+                <label for="frequencia-abastecimento">Abastece quantas vezes na semana?</label>
+                <input type="number" min="1" max="7" placeholder="Ex: 3" name="frequencia_abastecimento" id="frequencia-abastecimento" required>
+            </div>
+            <div class="pergunta">
+                <label for="dia-abastecimento">Qual dia da semana abastece?</label>
+                <select name="dia_abastecimento" id="dia-abastecimento" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SEGUNDA">Segunda</option>
+                    <option value="TERCA">Terça</option>
+                    <option value="QUARTA">Quarta</option>
+                    <option value="QUINTA">Quinta</option>
+                    <option value="SEXTA">Sexta</option>
+                    <option value="SABADO">Sabado</option>
+                    <option value="DOMINGO">Domingo</option>
+                    <option value="CONFORME_NECESSIDADE">Conforme necessidade</option>
+                </select>
+            </div>
+
+
+            <div class="proximo-btn">
+                <input type="button" value="Anterior" class="return-btn">
+                <input type="button" value="Próximo" class="next-btn">
+            </div>
+
+        </fieldset>
+        
+        <fieldset id="comportamentais">
+            <div class="pergunta">
+                <label for="locais-abastecimento">Qual o local você costuma abastecer?</label>
+                <select name="locais_abastecimento" id="locais-abastecimento">
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="PROXIMO_DE_CASA">Próximo de casa</option>
+                    <option value="PROXIMO_AO_TRABALHO">Próximo ao trabalho</option>
+                    <option value="LOCAL_MAIS_BARATO">Local mais barato</option>
+                </select>
+        
+            </div>    
+
+            <div class="pergunta">
+                <label for="tipo-combustivel">O consumidor utiliza algum tipo de combustível específico?</label>
+                <select name="tipo_combustivel" id="tipo-combustivel">
+                    <option value="" disabled="disabled" selected="true" hidden>Selecione uma opção</option> 
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Etanol">Etanol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="GNV">GNV</option>
+                </select>
+                </div>
+                <div class="pergunta">
+                <label for="manutencao-preventiva">O consumidor costuma realizar a manutenção preventiva do veículo?</label>
+                <select name="manutencao_preventiva" id="manutencao-preventiva" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+               </select>
+            </div>
+
+            <div class="proximo-btn">
+                <input type="button" value="Anterior" class="return-btn">
+                <input type="button" value="Próximo" class="next-btn">
+            </div>
+
+
+        </fieldset>
+
+        <fieldset id="psicograficas">
+            <div class="pergunta">
+                <label for="preocupacao-ambiental">O consumidor está preocupado com questões ambientais e busca opções mais sustentáveis de combustível?</label>
+                <select name="preocupacao_ambiental" id="preocupacao-ambiental" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+               </select>
+            </div>
+            <div class="pergunta">
+                <label for="valorizacao-economia-combustivel">O consumidor valoriza a economia de combustível e procura por opções mais eficientes?</label>
+                <select name="valorizacao_economia_combustivel" id="economia-combustivel" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim, busco o mais eficiente</option>
+                    <option value="NAO">Não, busco o mais barato</option>
+               </select>
+            </div>
+            <div class="pergunta">
+                <label for="preferencia-marca-combustivel">O consumidor tem preferência por alguma marca de combustível em particular?</label>
+                <select name="preferencia_marca_combustivel" id="marca-combustivel">
+                    <option value="" disabled="disabled" selected="true" hidden>Selecione uma opção</option> 
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+                </select>
+            </div>
+
+            </div>
+
+            <div class="pergunta">
+                <label for="pagamento-combustivel-qualidade">O consumidor está disposto a pagar mais por um combustível de maior qualidade?</label>
+                <select name="pagamento_combustivel_qualidade" id="combustivel-qualidade" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+               </select>
+            </div>
+
+            <div class="proximo-btn">
+                <input type="button" value="Anterior" class="return-btn">
+                <input type="button" value="Próximo" class="next-btn">
+            </div>
+
+
+        </fieldset>
+
+        <fieldset id="tecnologicas">
+            <div class="pergunta">
+                <label for="utilizacao-aplicativos">O consumidor utiliza aplicativos ou plataformas online para localizar postos de combustível ou comparar preços?</label>
+                <select name="utilizacao_aplicativos" id="utilizacao-aplicativos" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+               </select>
+            </div>
+            <div class="pergunta">
+                <label for="utilizacao-cartoes-fidelidade">O consumidor utiliza cartões de fidelidade ou programas de recompensa oferecidos por postos de combustível?</label>
+               <select name="utilizacao_cartoes_fidelidade" id="cartoes-fidelidade" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+               </select>
+            </div>
+            <div class="pergunta">
+                <label for="interesse-tecnologias-propulsao">O consumidor está interessado em novas tecnologias de propulsão, como veículos elétricos ou híbridos?</label>
+                <select name="interesse_tecnologias_propulsao" id="tecnologias-propulsao" required>
+                    <option value="" selected="true" disabled="disabled" hidden>Selecione uma opção</option>
+                    <option value="SIM">Sim</option>
+                    <option value="NAO">Não</option>
+                </select>
+            </div>
+
+            <div class="proximo-btn">
+                <input type="button" value="Anterior" class="return-btn">
+                <input type="button" value="Concluir" class="submit-btn">
+            </div>
+
+
+        </fieldset>
+        <div class="span-index">
+            <span class="fieldsetAtualFront"></span>
+            <span class="fiedsetLenFront"></span>  
+        </div>
+    </form>
+
+
+      
+
+    <footer>
+        <p>Desenvolvido pela Data Storm</p>
+        <a href="https://github.com/EricksonDS/IpirangaG2" target="_blank"><img src="imagens/github.png" alt="Ícone do github"></a>
+    </footer>
+</body>
+</html>
